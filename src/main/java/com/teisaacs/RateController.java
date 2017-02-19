@@ -1,11 +1,13 @@
 package com.teisaacs;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RefreshScope  //endpoint for actual refresh is available from spring boot actuator
 public class RateController {
 	
 	@Value("${rate}")
